@@ -14,3 +14,4 @@ jobs:
         with:
           token: ${{ secrets.GAZE_PANNING_PAT }}
           src_repo: https://github.com/rubyleehs/Gaze-Panning.git
+          dest_repo: https://github.com/rubyleehs/Gaze-Panning-Public.git
