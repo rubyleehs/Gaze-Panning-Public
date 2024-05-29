@@ -1,32 +1,16 @@
-- name: Clone Github Releases
-  # You may pin to the exact commit or the version.
-  # uses: andrewthetechie/gha-clone-releases@5a582558b887fccd9b404d45a07824b9989ecf13
-  uses: andrewthetechie/gha-clone-releases@v1.9.0
-  with:
-    # Github token
-    token: 
-    # Github token used for destination repo. If not set, token parameter is used
-    dest_token: # optional
-    # Source repo to clone from
-    src_repo:
-    # API repo for the src_repo. Defaults to Github. Set this if using GHE
-    src_repo_github_api_url: # optional, default is https://api.github.com
-    # Destination repo to clone to, default is this repo
-    dest_repo: # optional
-    # API repo for the dest_repo. Defaults to Github. Set this if using GHE
-    dest_repo_github_api_url: # optional, default is https://api.github.com
-    # Target for new tags/releases in this repo. If not set, will use the default branch
-    target: # optional, default is 
-    # Skip draft releases
-    skip_draft: # optional
-    # Skip Prereleases
-    skip_prerelease: # optional
-    # If true, copy assets from source repo releases to the newly created releases
-    copy_assets: # optional
-    # A limit of how many releases to add on a single run. Good for not overwhelming CI systems
-    limit: # optional, default is 0
-    # If true, just output what releases would have been made but do not make releases
-    dry_run: # optional
-    # If set, we will ignore any releases from the source repo that are less than min_version
-    min_version: # optional, default is 
-          
+name: CloneGithubReleases.
+on:
+  # kick off the job on demand
+  workflow_dispatch:
+  # and run on a schedule every 12 hours
+  schedule:
+    - cron: "* */24 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run action
+        uses: andrewthetechie/gha-clone-releases@v1
+        with:
+          token: ${{ secrets.GAZEPANNINGACCESS }}
+          src_repo: https://github.com/rubyleehs/Gaze-Panning.git
