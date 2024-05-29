@@ -1,4 +1,4 @@
-            - name: Clone Github Releases
+- name: Clone Github Releases
   # You may pin to the exact commit or the version.
   # uses: andrewthetechie/gha-clone-releases@5a582558b887fccd9b404d45a07824b9989ecf13
   uses: andrewthetechie/gha-clone-releases@v1.9.0
