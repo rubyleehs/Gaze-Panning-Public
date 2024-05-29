@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run action
-        uses: andrewthetechie/gha-clone-releases@v1
+        uses: andrewthetechie/gha-clone-releases@v1.9.0
         with:
           token: ${{ secrets.GAZEPANNINGACCESS }}
           src_repo: https://github.com/rubyleehs/Gaze-Panning.git
