@@ -13,5 +13,6 @@ jobs:
         uses: andrewthetechie/gha-clone-releases@v1.9.0
         with:
           token: ${{ secrets.GAZE_PANNING_PAT }}
-          src_repo: https://github.com/rubyleehs/Gaze-Panning.git
-          dest_repo: https://github.com/rubyleehs/Gaze-Panning-Public.git
+          src_repo: rubyleehs/Gaze-Panning
+          dest_repo: rubyleehs/Gaze-Panning-Public
+          copy_assets: true
